@@ -77,7 +77,7 @@ public class UserRegistration {
     }
 
     public boolean testPassword(String password) {
-        boolean isPassword = Pattern.matches("^([a-z]){8,20}$", password);
+        boolean isPassword = Pattern.matches("^(?=.*[a-z])(?=.*[A-Z])(?!.+[0-9]).{8,}$", password);
         if (isPassword) {
             System.out.println("Password is valid");
             return true;
