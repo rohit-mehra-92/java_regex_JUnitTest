@@ -29,4 +29,11 @@ public class UserRegistrationTest {
         boolean result = userRegistration.testPhoneNumber("91 7415257009");
         Assertions.assertTrue(result);
     }
+
+    @Test
+    void givenPassword_ShouldReturnTrue() {
+        UserRegistration userRegistration = new UserRegistration();
+        boolean result = userRegistration.testPassword("robinhood");
+        Assertions.assertTrue(result);
+    }
 }

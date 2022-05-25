@@ -1,12 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="UserRegistrationTest" tests="4" skipped="0" failures="0" errors="0" timestamp="2022-05-25T04:53:07" hostname="DESKTOP-483DOJV" time="0.058">
+<testsuite name="UserRegistrationTest" tests="5" skipped="0" failures="0" errors="0" timestamp="2022-05-25T05:14:52" hostname="DESKTOP-483DOJV" time="0.064">
   <properties/>
-  <testcase name="givenEmailId_ShouldReturnTrue()" classname="UserRegistrationTest" time="0.048"/>
+  <testcase name="givenPassword_ShouldReturnTrue()" classname="UserRegistrationTest" time="0.044"/>
+  <testcase name="givenEmailId_ShouldReturnTrue()" classname="UserRegistrationTest" time="0.002"/>
   <testcase name="givenFirstName_ShouldReturnTrue()" classname="UserRegistrationTest" time="0.002"/>
-  <testcase name="givenPhoneNumber_ShouldReturnTrue()" classname="UserRegistrationTest" time="0.002"/>
-  <testcase name="givenLastName_shouldReturnTrue()" classname="UserRegistrationTest" time="0.001"/>
-  <system-out><![CDATA[Email id is valid
+  <testcase name="givenPhoneNumber_ShouldReturnTrue()" classname="UserRegistrationTest" time="0.003"/>
+  <testcase name="givenLastName_shouldReturnTrue()" classname="UserRegistrationTest" time="0.002"/>
+  <system-out><![CDATA[Password is valid
+Email id is valid
 first name is valid
+Phone Number is valid
 Last name is valid
 ]]></system-out>
   <system-err><![CDATA[]]></system-err>

@@ -9,7 +9,7 @@ public class UserRegistration {
 
         int choice = 0;
         do {
-            System.out.println("1. First Name\n2. Last Name\n3. Email id\n0. Exit");
+            System.out.println("1. First Name\n2. Last Name\n3. Email id\n4. Phone number\n5.Password \n0. Exit");
             System.out.println("Enter choice");
             choice = sc.nextInt();
             switch (choice) {
@@ -68,8 +68,21 @@ public class UserRegistration {
     public boolean testPhoneNumber(String phoneNumber) {
         boolean isPhoneNumber = Pattern.matches("^([1-9]+[0-9]+)[\\s][0-9]{10}$", phoneNumber);
         if (isPhoneNumber) {
+            System.out.println("Phone Number is valid");
             return true;
         } else {
+            System.out.println("Phone Number is Invalid");
+            return false;
+        }
+    }
+
+    public boolean testPassword(String password) {
+        boolean isPassword = Pattern.matches("^([a-z]){8,20}$", password);
+        if (isPassword) {
+            System.out.println("Password is valid");
+            return true;
+        } else {
+            System.out.println("Password is Invalid");
             return false;
         }
     }
