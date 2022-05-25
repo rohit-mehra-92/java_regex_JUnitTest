@@ -33,7 +33,7 @@ public class UserRegistrationTest {
     @Test
     void givenPassword_ShouldReturnTrue() {
         UserRegistration userRegistration = new UserRegistration();
-        boolean result = userRegistration.testPassword("Rohit96304");
-        Assertions.assertFalse(result);
+        boolean result = userRegistration.testPassword("Rohit@81094");
+        Assertions.assertTrue(result);
     }
 }

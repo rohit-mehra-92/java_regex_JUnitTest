@@ -27,6 +27,16 @@ public class UserRegistration {
                     String emailId = sc.next();
                     userRegistration.testEmail(emailId);
                     break;
+                case 4:
+                    System.out.println("Enter the Phone Number");
+                    String phoneNum = sc.next();
+                    userRegistration.testEmail(phoneNum);
+                    break;
+                case 5:
+                    System.out.println("Enter the Password");
+                    String password = sc.next();
+                    userRegistration.testEmail(password);
+                    break;
             }
         }
         while (choice != 0);
@@ -77,7 +87,7 @@ public class UserRegistration {
     }
 
     public boolean testPassword(String password) {
-        boolean isPassword = Pattern.matches("^(?=.*[a-z])(?=.*[A-Z])(?=.+[0-9]).{8,}$", password);
+        boolean isPassword = Pattern.matches("^(?=.*[a-z])(?=.*[A-Z])(?=.+[0-9])(?=.*[%^<>?/:'}{()*!|.,;_#&$+=@]).{8,}$", password);
         if (isPassword) {
             System.out.println("Password is valid");
             return true;
