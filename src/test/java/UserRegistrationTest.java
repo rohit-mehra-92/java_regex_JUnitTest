@@ -8,4 +8,11 @@ public class UserRegistrationTest {
         boolean result = userRegistration.testFirstName("Rohit");
         Assertions.assertTrue(result);
     }
+
+    @Test
+    void givenLastName_shouldReturnTrue() {
+        UserRegistration userRegistration = new UserRegistration();
+        boolean result = userRegistration.testLastName("Mehra");
+        Assertions.assertTrue(result);
+    }
 }
