@@ -55,12 +55,21 @@ public class UserRegistration {
     }
 
     public boolean testEmail(String email) {
-        boolean isMailId = Pattern.matches("^([a-z0-9]+([-$%&+.]?[0-9a-z]+))[@][a-z0-9]+[.][a-z]{3,}([.][a-z]{2,})?$", email);
-        if (isMailId) {
+        boolean isEmailId = Pattern.matches("^([a-z0-9]+([-$%&+.]?[0-9a-z]+))[@][a-z0-9]+[.][a-z]{3,}([.][a-z]{2,})?$", email);
+        if (isEmailId) {
             System.out.println("Email id is valid");
             return true;
         } else {
             System.out.println("Email id is invalid");
+            return false;
+        }
+    }
+
+    public boolean testPhoneNumber(String phoneNumber) {
+        boolean isPhoneNumber = Pattern.matches("^([1-9]+[0-9]+)[\\s][0-9]{10}$", phoneNumber);
+        if (isPhoneNumber) {
+            return true;
+        } else {
             return false;
         }
     }

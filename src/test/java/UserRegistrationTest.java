@@ -22,4 +22,11 @@ public class UserRegistrationTest {
         boolean result = userRegistration.testEmail("rohit264cool@gmail.com");
         Assertions.assertTrue(result);
     }
+
+    @Test
+    void givenPhoneNumber_ShouldReturnTrue() {
+        UserRegistration userRegistration = new UserRegistration();
+        boolean result = userRegistration.testPhoneNumber("91 7415257009");
+        Assertions.assertTrue(result);
+    }
 }
