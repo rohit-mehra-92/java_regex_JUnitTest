@@ -9,7 +9,7 @@ public class UserRegistration {
 
         int choice = 0;
         do {
-            System.out.println("1. First Name\n2. Last Name\n0. Exit");
+            System.out.println("1. First Name\n2. Last Name\n3. Email id\n0. Exit");
             System.out.println("Enter choice");
             choice = sc.nextInt();
             switch (choice) {
@@ -21,6 +21,11 @@ public class UserRegistration {
                     System.out.println("Enter the last name");
                     String lastName = sc.next();
                     userRegistration.testLastName(lastName);
+                    break;
+                case 3:
+                    System.out.println("Enter the Email id");
+                    String emailId = sc.next();
+                    userRegistration.testEmail(emailId);
                     break;
             }
         }
@@ -45,6 +50,17 @@ public class UserRegistration {
             return true;
         } else {
             System.out.println("Last name is invalid");
+            return false;
+        }
+    }
+
+    public boolean testEmail(String email) {
+        boolean isMailId = Pattern.matches("^([a-z0-9]+([-$%&+.]?[0-9a-z]+))[@][a-z0-9]+[.][a-z]{3,}([.][a-z]{2,})?$", email);
+        if (isMailId) {
+            System.out.println("Email id is valid");
+            return true;
+        } else {
+            System.out.println("Email id is invalid");
             return false;
         }
     }

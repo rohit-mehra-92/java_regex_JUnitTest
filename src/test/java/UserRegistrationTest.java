@@ -15,4 +15,11 @@ public class UserRegistrationTest {
         boolean result = userRegistration.testLastName("Mehra");
         Assertions.assertTrue(result);
     }
+
+    @Test
+    void givenEmailId_ShouldReturnTrue() {
+        UserRegistration userRegistration = new UserRegistration();
+        boolean result = userRegistration.testEmail("rohit264cool@gmail.com");
+        Assertions.assertTrue(result);
+    }
 }

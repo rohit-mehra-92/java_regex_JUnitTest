@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="UserRegistrationTest" tests="2" skipped="0" failures="0" errors="0" timestamp="2022-05-25T04:16:37" hostname="DESKTOP-483DOJV" time="0.065">
+<testsuite name="UserRegistrationTest" tests="3" skipped="0" failures="0" errors="0" timestamp="2022-05-25T04:38:09" hostname="DESKTOP-483DOJV" time="0.056">
   <properties/>
-  <testcase name="givenFirstName_ShouldReturnTrue()" classname="UserRegistrationTest" time="0.055"/>
-  <testcase name="givenLastName_shouldReturnTrue()" classname="UserRegistrationTest" time="0.007"/>
-  <system-out><![CDATA[first name is valid
+  <testcase name="givenEmailId_ShouldReturnTrue()" classname="UserRegistrationTest" time="0.047"/>
+  <testcase name="givenFirstName_ShouldReturnTrue()" classname="UserRegistrationTest" time="0.003"/>
+  <testcase name="givenLastName_shouldReturnTrue()" classname="UserRegistrationTest" time="0.002"/>
+  <system-out><![CDATA[Email id is valid
+first name is valid
 Last name is valid
 ]]></system-out>
   <system-err><![CDATA[]]></system-err>
