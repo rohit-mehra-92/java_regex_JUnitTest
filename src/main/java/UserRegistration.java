@@ -1,3 +1,4 @@
+import javax.print.DocFlavor;
 import java.util.Scanner;
 import java.util.regex.Pattern;
 
@@ -38,62 +39,52 @@ public class UserRegistration {
                     userRegistration.testEmail(password);
                     break;
             }
-        }
-        while (choice != 0);
+        } while (choice != 0);
     }
 
-    public boolean testFirstName(String firstName) {
+    public String testFirstName(String firstName) {
         boolean isFirstName = Pattern.matches("^[A-Z][a-z]{2,}$", firstName);
         if (isFirstName) {
-            System.out.println("first name is valid");
-            return true;
+            return "Happy";
         } else {
-            System.out.println("first name is invalid");
-            return false;
+            return "Sad";
         }
     }
 
-    public boolean testLastName(String lastName) {
+    public String testLastName(String lastName) {
         boolean isLastName = Pattern.matches("^[A-Z][a-z]{2,}$", lastName);
         if (isLastName) {
-            System.out.println("Last name is valid");
-            return true;
+            return "Happy";
         } else {
-            System.out.println("Last name is invalid");
-            return false;
+            return "Sad";
         }
     }
 
-    public boolean testEmail(String email) {
+    public String testEmail(String email) {
         boolean isEmailId = Pattern.matches("^([a-z0-9]+([-$%&+.]?[0-9a-z]+))[@][a-z0-9]+[.][a-z]{3,}([.][a-z]{2,})?$", email);
         if (isEmailId) {
-            System.out.println("Email id is valid");
-            return true;
+            return "Happy";
         } else {
-            System.out.println("Email id is invalid");
-            return false;
+            return "Sad";
         }
     }
 
-    public boolean testPhoneNumber(String phoneNumber) {
+    public String testPhoneNumber(String phoneNumber) {
         boolean isPhoneNumber = Pattern.matches("^([1-9]+[0-9]+)[\\s][0-9]{10}$", phoneNumber);
         if (isPhoneNumber) {
-            System.out.println("Phone Number is valid");
-            return true;
+            return "Happy";
         } else {
-            System.out.println("Phone Number is Invalid");
-            return false;
+            return "Sad";
         }
     }
 
-    public boolean testPassword(String password) {
+    public String testPassword(String password) {
         boolean isPassword = Pattern.matches("^(?=.*[a-z])(?=.*[A-Z])(?=.+[0-9])(?=.*[%^<>?/:'}{()*!|.,;_#&$+=@]).{8,}$", password);
         if (isPassword) {
-            System.out.println("Password is valid");
-            return true;
+            return "Happy";
         } else {
-            System.out.println("Password is Invalid");
-            return false;
+            return "Sad";
         }
     }
 }
+

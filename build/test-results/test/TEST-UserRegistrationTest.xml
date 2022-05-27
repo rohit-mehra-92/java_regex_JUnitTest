@@ -1,16 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="UserRegistrationTest" tests="5" skipped="0" failures="0" errors="0" timestamp="2022-05-25T05:46:51" hostname="DESKTOP-483DOJV" time="0.069">
+<testsuite name="UserRegistrationTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2022-05-27T14:14:48" hostname="DESKTOP-483DOJV" time="0.034">
   <properties/>
-  <testcase name="givenPassword_ShouldReturnTrue()" classname="UserRegistrationTest" time="0.046"/>
-  <testcase name="givenEmailId_ShouldReturnTrue()" classname="UserRegistrationTest" time="0.003"/>
-  <testcase name="givenFirstName_ShouldReturnTrue()" classname="UserRegistrationTest" time="0.003"/>
-  <testcase name="givenPhoneNumber_ShouldReturnTrue()" classname="UserRegistrationTest" time="0.005"/>
-  <testcase name="givenLastName_shouldReturnTrue()" classname="UserRegistrationTest" time="0.002"/>
-  <system-out><![CDATA[Password is Invalid
-Email id is valid
-first name is valid
-Phone Number is valid
-Last name is valid
-]]></system-out>
+  <testcase name="givenPassword_improperFormat_ShouldReturnSad()" classname="UserRegistrationTest" time="0.034"/>
+  <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

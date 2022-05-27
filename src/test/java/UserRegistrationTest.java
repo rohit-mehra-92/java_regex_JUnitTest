@@ -3,37 +3,72 @@ import org.junit.jupiter.api.Test;
 
 public class UserRegistrationTest {
     @Test
-    void givenFirstName_ShouldReturnTrue() {
+    void givenFirstName_properFormat_ShouldReturnHappy() {
         UserRegistration userRegistration = new UserRegistration();
-        boolean result = userRegistration.testFirstName("Rohit");
-        Assertions.assertTrue(result);
+        String result = userRegistration.testFirstName("Rohit");
+        Assertions.assertEquals("Happy", result);
     }
 
     @Test
-    void givenLastName_shouldReturnTrue() {
+    void givenFirstName_improperFormat_ShouldReturnSad() {
         UserRegistration userRegistration = new UserRegistration();
-        boolean result = userRegistration.testLastName("Mehra");
-        Assertions.assertTrue(result);
+        String result = userRegistration.testFirstName("rohit");
+        Assertions.assertEquals("Sad", result);
     }
 
     @Test
-    void givenEmailId_ShouldReturnTrue() {
+    void givenLastName_properFormat_shouldReturnHappy() {
         UserRegistration userRegistration = new UserRegistration();
-        boolean result = userRegistration.testEmail("rohit264cool@gmail.com");
-        Assertions.assertTrue(result);
+        String result = userRegistration.testLastName("Mehra");
+        Assertions.assertEquals("Happy", result);
     }
 
     @Test
-    void givenPhoneNumber_ShouldReturnTrue() {
+    void givenLastName_improperFormat_shouldReturnSad() {
         UserRegistration userRegistration = new UserRegistration();
-        boolean result = userRegistration.testPhoneNumber("91 7415257009");
-        Assertions.assertTrue(result);
+        String result = userRegistration.testLastName("mehra");
+        Assertions.assertEquals("Sad", result);
     }
 
     @Test
-    void givenPassword_ShouldReturnTrue() {
+    void givenEmailId_properFormat_ShouldReturnHappy() {
         UserRegistration userRegistration = new UserRegistration();
-        boolean result = userRegistration.testPassword("Rohit@81094");
-        Assertions.assertTrue(result);
+        String result = userRegistration.testEmail("rohit264cool@gmail.com");
+        Assertions.assertEquals("Happy", result);
+    }
+
+    @Test
+    void givenEmailId_improperFormat_ShouldReturnSad() {
+        UserRegistration userRegistration = new UserRegistration();
+        String result = userRegistration.testLastName("rohit264coolQgm.co");
+        Assertions.assertEquals("Sad", result);
+    }
+
+    @Test
+    void givenPhoneNumber_properFormat_ShouldReturnHappy() {
+        UserRegistration userRegistration = new UserRegistration();
+        String result = userRegistration.testPhoneNumber("91 7415257009");
+        Assertions.assertEquals("Happy", result);
+    }
+
+    @Test
+    void givenPhoneNumber_improperFormat_ShouldReturnSad() {
+        UserRegistration userRegistration = new UserRegistration();
+        String result = userRegistration.testPhoneNumber("917415257009");
+        Assertions.assertEquals("Sad", result);
+    }
+
+    @Test
+    void givenPassword_properFormat_ShouldReturnHappy() {
+        UserRegistration userRegistration = new UserRegistration();
+        String result = userRegistration.testPassword("Rohit@81094");
+        Assertions.assertEquals("Happy", result);
+    }
+
+    @Test
+    void givenPassword_improperFormat_ShouldReturnSad() {
+        UserRegistration userRegistration = new UserRegistration();
+        String result = userRegistration.testPassword("rohit@81094");
+        Assertions.assertEquals("Sad", result);
     }
 }
