@@ -4,45 +4,11 @@ import java.util.regex.Pattern;
 
 public class UserRegistration {
 
-    public static void main(String[] args) throws UserDetailException {
-        UserRegistration userRegistration = new UserRegistration();
-        Scanner sc = new Scanner(System.in);
-
-        int choice = 0;
-        do {
-            System.out.println("1. First Name\n2. Last Name\n3. Email id\n4. Phone number\n5.Password \n0. Exit");
-            System.out.println("Enter choice");
-            choice = sc.nextInt();
-            switch (choice) {
-                case 1:
-                    System.out.println("Enter the first name");
-                    String firstName = sc.next();
-                    userRegistration.testFirstName(firstName);
-                case 2:
-                    System.out.println("Enter the last name");
-                    String lastName = sc.next();
-                    userRegistration.testLastName(lastName);
-                    break;
-                case 3:
-                    System.out.println("Enter the Email id");
-                    String emailId = sc.next();
-                    userRegistration.testEmail(emailId);
-                    break;
-                case 4:
-                    System.out.println("Enter the Phone Number");
-                    String phoneNum = sc.next();
-                    userRegistration.testEmail(phoneNum);
-                    break;
-                case 5:
-                    System.out.println("Enter the Password");
-                    String password = sc.next();
-                    userRegistration.testEmail(password);
-                    break;
-            }
-        } while (choice != 0);
+    public interface UserRegistrationFunction {
+        boolean validate(String value, String pattern) throws UserDetailException;
     }
 
-    public boolean testFirstName(String firstName) throws UserDetailException {
+    UserRegistrationFunction testFirstName = (firstName, pattern) -> {
         try {
             if (firstName.length() == 0) {
                 throw new UserDetailException("Please enter valid first name", UserDetailException.ExceptionTypes.ENTERED_EMPTY);
@@ -55,10 +21,9 @@ public class UserRegistration {
             throw new UserDetailException("Please enter valid first name", UserDetailException.ExceptionTypes.ENTERED_NULL);
         }
         return false;
-    }
+    };
 
-
-    public boolean testLastName(String lastName) throws UserDetailException {
+    UserRegistrationFunction testLastName = (lastName, pattern) -> {
         try {
             if (lastName.length() == 0) {
                 throw new UserDetailException("Please enter valid last name", UserDetailException.ExceptionTypes.ENTERED_EMPTY);
@@ -72,9 +37,9 @@ public class UserRegistration {
         }
         System.out.println("Please check Last Name");
         return false;
-    }
+    };
 
-    public boolean testEmail(String email) throws UserDetailException {
+    UserRegistrationFunction testEmail = (email, pattern) -> {
         try {
             if (email.length() == 0) {
                 throw new UserDetailException("please enter valid email ", UserDetailException.ExceptionTypes.ENTERED_EMPTY);
@@ -88,9 +53,9 @@ public class UserRegistration {
         }
         System.out.println("Please check Last Name");
         return false;
-    }
+    };
 
-    public boolean testPhoneNumber(String phoneNumber) throws UserDetailException {
+    UserRegistrationFunction testPhoneNumber = (phoneNumber, pattern) -> {
         try {
             if (phoneNumber.length() == 0) {
                 throw new UserDetailException("Please enter valid phone number", UserDetailException.ExceptionTypes.ENTERED_EMPTY);
@@ -104,9 +69,9 @@ public class UserRegistration {
         }
         System.out.println("Please check phone number");
         return false;
-    }
+    };
 
-    public boolean testPassword(String password) throws UserDetailException {
+    UserRegistrationFunction testPassword = (password, pattern) -> {
         try {
             if (password.length() == 0) {
                 throw new UserDetailException("Please enter valid password", UserDetailException.ExceptionTypes.ENTERED_EMPTY);
@@ -115,12 +80,10 @@ public class UserRegistration {
             if (isPassword) {
                 return true;
             }
-        } catch (
-                NullPointerException e) {
+        } catch (NullPointerException e) {
             throw new UserDetailException("Please enter valid password", UserDetailException.ExceptionTypes.ENTERED_NULL);
         }
         System.out.println("Please check phone number");
         return false;
-    }
-
+    };
 }

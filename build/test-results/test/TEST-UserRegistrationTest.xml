@@ -1,31 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="UserRegistrationTest" tests="20" skipped="0" failures="0" errors="0" timestamp="2022-05-28T05:47:47" hostname="DESKTOP-483DOJV" time="0.111">
+<testsuite name="UserRegistrationTest" tests="20" skipped="0" failures="0" errors="0" timestamp="2022-05-28T06:39:02" hostname="DESKTOP-483DOJV" time="0.116">
   <properties/>
-  <testcase name="givenEmpty_WhenPasswordException_ShouldMatch()" classname="UserRegistrationTest" time="0.037"/>
-  <testcase name="givenNull_WhenEmailException_ShouldMatch()" classname="UserRegistrationTest" time="0.005"/>
-  <testcase name="givenNull_WhenLastNameException_ShouldMatch()" classname="UserRegistrationTest" time="0.002"/>
-  <testcase name="givenEmpty_WhenFirstNameException_ShouldMatch()" classname="UserRegistrationTest" time="0.002"/>
+  <testcase name="givenEmailId_improperFormat_ShouldReturnFalse()" classname="UserRegistrationTest" time="0.046"/>
+  <testcase name="givenEmpty_WhenPasswordException_ShouldMatch()" classname="UserRegistrationTest" time="0.002"/>
+  <testcase name="givenNull_WhenEmailException_ShouldMatch()" classname="UserRegistrationTest" time="0.006"/>
+  <testcase name="givenNull_WhenLastNameException_ShouldMatch()" classname="UserRegistrationTest" time="0.001"/>
+  <testcase name="givenEmpty_WhenFirstNameException_ShouldMatch()" classname="UserRegistrationTest" time="0.003"/>
   <testcase name="givenLastName_improperFormat_shouldReturnFalse()" classname="UserRegistrationTest" time="0.001"/>
   <testcase name="givenPassword_improperFormat_ShouldReturnFalse()" classname="UserRegistrationTest" time="0.002"/>
   <testcase name="givenPhoneNumber_improperFormat_ShouldReturnFalse()" classname="UserRegistrationTest" time="0.003"/>
-  <testcase name="givenLastName_properFormat_shouldReturnTrue()" classname="UserRegistrationTest" time="0.003"/>
+  <testcase name="givenLastName_properFormat_shouldReturnTrue()" classname="UserRegistrationTest" time="0.004"/>
   <testcase name="givenEmpty_WhenEmailException_ShouldMatch()" classname="UserRegistrationTest" time="0.002"/>
   <testcase name="givenFirstName_properFormat_ShouldReturnTrue()" classname="UserRegistrationTest" time="0.001"/>
-  <testcase name="givenNull_WhenFirstNameException_ShouldMatch()" classname="UserRegistrationTest" time="0.002"/>
+  <testcase name="givenNull_WhenFirstNameException_ShouldMatch()" classname="UserRegistrationTest" time="0.001"/>
   <testcase name="givenFirstName_improperFormat_ShouldReturnFalse()" classname="UserRegistrationTest" time="0.001"/>
-  <testcase name="givenEmailId_properFormat_ShouldReturnTrue()" classname="UserRegistrationTest" time="0.002"/>
-  <testcase name="givenPassword_properFormat_ShouldReturnTrue()" classname="UserRegistrationTest" time="0.002"/>
-  <testcase name="givenEmpty_WhenLastNameException_ShouldMatch()" classname="UserRegistrationTest" time="0.004"/>
-  <testcase name="givenNull_WhenPhoneNumberException_ShouldMatch()" classname="UserRegistrationTest" time="0.003"/>
-  <testcase name="givenEmailId_improperFormat_ShouldReturnSad()" classname="UserRegistrationTest" time="0.002"/>
-  <testcase name="givenEmpty_WhenPhoneNumberException_ShouldMatch()" classname="UserRegistrationTest" time="0.004"/>
-  <testcase name="givenNull_WhenPasswordException_ShouldMatch()" classname="UserRegistrationTest" time="0.001"/>
+  <testcase name="givenEmailId_properFormat_ShouldReturnTrue()" classname="UserRegistrationTest" time="0.001"/>
+  <testcase name="givenPassword_properFormat_ShouldReturnTrue()" classname="UserRegistrationTest" time="0.003"/>
+  <testcase name="givenEmpty_WhenLastNameException_ShouldMatch()" classname="UserRegistrationTest" time="0.001"/>
+  <testcase name="givenNull_WhenPhoneNumberException_ShouldMatch()" classname="UserRegistrationTest" time="0.002"/>
+  <testcase name="givenEmpty_WhenPhoneNumberException_ShouldMatch()" classname="UserRegistrationTest" time="0.003"/>
+  <testcase name="givenNull_WhenPasswordException_ShouldMatch()" classname="UserRegistrationTest" time="0.002"/>
   <testcase name="givenPhoneNumber_properFormat_ShouldReturnTrue()" classname="UserRegistrationTest" time="0.002"/>
-  <system-out><![CDATA[Please check phone number
+  <system-out><![CDATA[Please check Last Name
+Please check phone number
 Please check Last Name
 Please check phone number
 Please check phone number
-Please check Last Name
 Please check Last Name
 Please check Last Name
 Please check phone number
