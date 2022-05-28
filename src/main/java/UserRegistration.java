@@ -4,7 +4,7 @@ import java.util.regex.Pattern;
 
 public class UserRegistration {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws UserDetailException {
         UserRegistration userRegistration = new UserRegistration();
         Scanner sc = new Scanner(System.in);
 
@@ -42,49 +42,85 @@ public class UserRegistration {
         } while (choice != 0);
     }
 
-    public String testFirstName(String firstName) {
-        boolean isFirstName = Pattern.matches("^[A-Z][a-z]{2,}$", firstName);
-        if (isFirstName) {
-            return "Happy";
-        } else {
-            return "Sad";
+    public boolean testFirstName(String firstName) throws UserDetailException {
+        try {
+            if (firstName.length() == 0) {
+                throw new UserDetailException("Please enter valid first name", UserDetailException.ExceptionTypes.ENTERED_EMPTY);
+            }
+            boolean isFirstName = Pattern.matches("^[A-Z][a-z]{2,}$", firstName);
+            if (isFirstName) {
+                return true;
+            }
+        } catch (NullPointerException e) {
+            throw new UserDetailException("Please enter valid first name", UserDetailException.ExceptionTypes.ENTERED_NULL);
         }
+        return false;
     }
 
-    public String testLastName(String lastName) {
-        boolean isLastName = Pattern.matches("^[A-Z][a-z]{2,}$", lastName);
-        if (isLastName) {
-            return "Happy";
-        } else {
-            return "Sad";
+
+    public boolean testLastName(String lastName) throws UserDetailException {
+        try {
+            if (lastName.length() == 0) {
+                throw new UserDetailException("Please enter valid last name", UserDetailException.ExceptionTypes.ENTERED_EMPTY);
+            }
+            boolean isLastName = Pattern.matches("^[A-Z][a-z]{2,}$", lastName);
+            if (isLastName) {
+                return true;
+            }
+        } catch (NullPointerException e) {
+            throw new UserDetailException("Please enter valid last name", UserDetailException.ExceptionTypes.ENTERED_NULL);
         }
+        System.out.println("Please check Last Name");
+        return false;
     }
 
-    public String testEmail(String email) {
-        boolean isEmailId = Pattern.matches("^([a-z0-9]+([-$%&+.]?[0-9a-z]+))[@][a-z0-9]+[.][a-z]{3,}([.][a-z]{2,})?$", email);
-        if (isEmailId) {
-            return "Happy";
-        } else {
-            return "Sad";
+    public boolean testEmail(String email) throws UserDetailException {
+        try {
+            if (email.length() == 0) {
+                throw new UserDetailException("please enter valid email ", UserDetailException.ExceptionTypes.ENTERED_EMPTY);
+            }
+            boolean isEmailId = Pattern.matches("^([a-z0-9]+([-$%&+.]?[0-9a-z]+))[@][a-z0-9]+[.][a-z]{3,}([.][a-z]{2,})?$", email);
+            if (isEmailId) {
+                return true;
+            }
+        } catch (NullPointerException e) {
+            throw new UserDetailException("Please enter valid email", UserDetailException.ExceptionTypes.ENTERED_NULL);
         }
+        System.out.println("Please check Last Name");
+        return false;
     }
 
-    public String testPhoneNumber(String phoneNumber) {
-        boolean isPhoneNumber = Pattern.matches("^([1-9]+[0-9]+)[\\s][0-9]{10}$", phoneNumber);
-        if (isPhoneNumber) {
-            return "Happy";
-        } else {
-            return "Sad";
+    public boolean testPhoneNumber(String phoneNumber) throws UserDetailException {
+        try {
+            if (phoneNumber.length() == 0) {
+                throw new UserDetailException("Please enter valid phone number", UserDetailException.ExceptionTypes.ENTERED_EMPTY);
+            }
+            boolean isPhoneNumber = Pattern.matches("^([1-9]+[0-9]+)[\\s][0-9]{10}$", phoneNumber);
+            if (isPhoneNumber) {
+                return true;
+            }
+        } catch (NullPointerException e) {
+            throw new UserDetailException("Please enter phone number", UserDetailException.ExceptionTypes.ENTERED_NULL);
         }
+        System.out.println("Please check phone number");
+        return false;
     }
 
-    public String testPassword(String password) {
-        boolean isPassword = Pattern.matches("^(?=.*[a-z])(?=.*[A-Z])(?=.+[0-9])(?=.*[%^<>?/:'}{()*!|.,;_#&$+=@]).{8,}$", password);
-        if (isPassword) {
-            return "Happy";
-        } else {
-            return "Sad";
+    public boolean testPassword(String password) throws UserDetailException {
+        try {
+            if (password.length() == 0) {
+                throw new UserDetailException("Please enter valid password", UserDetailException.ExceptionTypes.ENTERED_EMPTY);
+            }
+            boolean isPassword = Pattern.matches("^(?=.*[a-z])(?=.*[A-Z])(?=.+[0-9])(?=.*[%^<>?/:'}{()*!|.,;_#&$+=@]).{8,}$", password);
+            if (isPassword) {
+                return true;
+            }
+        } catch (
+                NullPointerException e) {
+            throw new UserDetailException("Please enter valid password", UserDetailException.ExceptionTypes.ENTERED_NULL);
         }
+        System.out.println("Please check phone number");
+        return false;
     }
+
 }
-
